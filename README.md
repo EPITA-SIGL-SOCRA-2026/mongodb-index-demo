@@ -12,16 +12,20 @@
 
 ## Configuration de l'environnement
 
-1. **Configuration de MongoDB :** lancer MongoDB en utilisant Docker et le fichier `docker-compose.yml` fourni.
-   ```bash
-   docker compose up -d
-   ```
-2. **Générer des données :** exécuter le script `generate_cultures_comments.py` pour générer des données de cultures et de commentaires.
+1. **Générer des données :** exécuter le script `generate_cultures_comments.py` pour générer des données de cultures et de commentaires.
+
    ```bash
    # Python 3 doit être installé
    pip install -r requirements.txt
    python generate_cultures_comments.py --nb-jardins 100000 --nb-plantes 156 --nb-jardiniers 500
    ```
+
+2. **Configuration de MongoDB :** lancer MongoDB en utilisant Docker et le fichier `docker-compose.yml` fourni.
+
+   ```bash
+   docker compose up -d
+   ```
+
 3. **Importer les données dans MongoDB:** utiliser `mongoimport` pour importer les données générées dans la base de données MongoDB.
    ```bash
    # Importation des données dans la collection "commentaires" de la base de données "demo"
